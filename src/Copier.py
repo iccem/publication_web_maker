@@ -3,12 +3,12 @@ import shutil
 from doc import doc
 
 
-class Current_publication_info_maker:
-    def __int__(self):
-        pass
+class CurrentPublicationInfoMaker:
+    def __init__(self, current_number: str):
+        self._current_number = current_number
 
-    def get_artefacts(self, current_number: str):
-        current_publication = current_number + doc._current_publication
+    def get_artefacts(self):
+        current_publication = self._current_number + doc._current_publication
         file_source = doc.dir_source + '\\' + current_publication
         file_target = doc.dir_target + '\\' + current_publication
 
