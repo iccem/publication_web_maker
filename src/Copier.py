@@ -3,14 +3,19 @@ import shutil
 from doc import doc
 
 
-class CurrentPublicationInfoMaker:
+class CurrentPathsMaker:
     def __init__(self, current_number: str):
         self._current_number = current_number
 
-    def get_artefacts(self):
+    def get_paths(self):
         current_publication = self._current_number + doc._current_publication
-        file_source = doc.dir_source + '\\' + current_publication
-        file_target = doc.dir_target + '\\' + current_publication
+        indd_source = doc.dir_source + '\\' + current_publication
+        indd_target = doc.dir_target + '\\' + current_publication
+
+        cover_dir_source = ''
+        cover_dir_target = ''
+
+        photos_dir_source = ''
 
 
 class Copier:
