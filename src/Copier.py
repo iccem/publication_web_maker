@@ -3,19 +3,32 @@ import shutil
 from doc import doc
 
 
-class CurrentPathsMaker:
-    def __init__(self, current_number: str):
-        self._current_number = current_number
+class Path:
+    def get_number(self, number: str) -> str:
+        """
+        проверяет, если 1-9 включительно
+        добавляет в начале 0"""
+        if len(number) == 1:
+            return '0' + number
+        return number
 
-    def get_paths(self):
-        current_publication = self._current_number + doc._current_publication
-        indd_source = doc.dir_source + '\\' + current_publication
-        indd_target = doc.dir_target + '\\' + current_publication
+    def __init__(self, number: str, year: str):
+        self._raw_number = number
+        self._year = year
+
+        self._number = self.get_number(self._raw_number)
+
+    def get_path(self):
+        publication_filename = self._number + doc.tail_of_filename_publication
+        indd_source = doc.dir_source_indd + + self._year + '\\' + self._number + '\\' + publication_filename
+
+        indd_target = ''
 
         cover_dir_source = ''
         cover_dir_target = ''
 
         photos_dir_source = ''
+
 
 
 class Copier:

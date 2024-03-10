@@ -20,7 +20,7 @@ class Path:
 
     def _get_paths(self):
         """Get paths sources and targets."""
-        dir_source = doc._dir_source + self._current_year + '\\' + self._current_number
+        dir_source = doc._dir_source_indd + self._current_year + '\\' + self._current_number
         dir_cover_source = doc._dir_cover_source + '\\' + self._current_number
 
         bw_indd_file_path = self._current_number + doc._tail_of_filename_publication
