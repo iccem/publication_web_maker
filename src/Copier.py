@@ -19,6 +19,9 @@ class Path:
         self._number = self.get_number(self._raw_number)
 
     def get_path(self):
+        # source
+
+        # indd file
         publication_filename = self._number + doc.tail_of_filename_publication
         indd_source = doc.dir_source_indd + + self._year + '\\' + self._number + '\\' + publication_filename
 
@@ -29,16 +32,18 @@ class Path:
 
         photos_dir_source = ''
 
+        # target
 
 
 class Copier:
-    def __int__(self):
-        pass
+    def __int__(self, filefrom: str, fileto: str) -> None:
+        self.filefrom = filefrom
+        self.fileto = fileto
 
-    def get_copy_file(self, filefrom: str, fileto: str):
+    def get_copy_file(self):
         """Copy the file."""
         try:
-            shutil.copy(filefrom, fileto)  # копируем публикацию
+            shutil.copy(self.filefrom, self.fileto)  # копируем публикацию
             print('Indd has copied!')
         except:
             print('err')
