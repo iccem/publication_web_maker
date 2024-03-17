@@ -45,7 +45,7 @@ class Copier:
         self._imgdirfrom = imgdirfrom
         self._imgdirto = imgdirto
 
-    def get_copy_file(self):
+    def get_copy_indd_file(self):
         """Copy the file."""
         try:
             shutil.copy(self._filefrom, self._fileto)  # копируем публикацию
@@ -53,8 +53,8 @@ class Copier:
         except:
             print('err')
 
-    def get_file_folder(self):
-        """Copy the cover files folder."""
+    def get_file_cover_folder(self):
+        """Copy the cover and extra adv files folder."""
         if not os.path.exists(self._imgdirto):
             os.makedirs(self._imgdirto)
         with os.scandir(self._imgdirfrom) as files_list:
@@ -68,3 +68,7 @@ class Copier:
                         print('Cover has copied!')
                     except Exception as e:
                         print('Export to PDF failed: ' + str(e))
+
+    def get_title_cover_file(self):
+        """Copy the title cover pdf file"""
+        pass
