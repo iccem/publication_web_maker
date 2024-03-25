@@ -69,6 +69,18 @@ class Copier:
                     except Exception as e:
                         print('Export to PDF failed: ' + str(e))
 
-    def get_title_cover_file(self):
-        """Copy the title cover pdf file"""
-        pass
+    def get_title_cover_file(self, cover_dir_source: str, cover_dir_target: str) -> None:
+        """Copy the file folder."""
+        if not os.path.exists(cover_dir_target):
+            os.makedirs(cover_dir_target)
+        with os.scandir(cover_dir_source) as files_list:
+            for file in files_list:
+                if file.is_file():
+                    print(file.name)
+                    try:
+                        shutil.copy(cover_dir_source + '\\' + file.name, cover_dir_target + '\\' + file.name)
+                        # копируем обложку
+                        #  обложка большая! копируется медленно!
+                        print('Cover has copied!')
+                    except Exception as e:
+                        print('Export to PDF failed: ' + str(e))
