@@ -45,29 +45,16 @@ class Copier:
         self._imgdirfrom = imgdirfrom
         self._imgdirto = imgdirto
 
-    def get_copy_indd_file(self):
-        """Copy the file."""
+    def copy_indd_file(self):
+        """
+        Copy the file.
+        """
         try:
             shutil.copy(self._filefrom, self._fileto)  # копируем публикацию
             print('Indd has copied!')
         except:
             print('err')
 
-    def get_file_cover_folder(self):
-        """Copy the cover and extra adv files folder."""
-        if not os.path.exists(self._imgdirto):
-            os.makedirs(self._imgdirto)
-        with os.scandir(self._imgdirfrom) as files_list:
-            for file in files_list:
-                if file.is_file():
-                    print(file.name)
-                    try:
-                        shutil.copy(self._imgdirfrom + '\\' + file.name, self._imgdirto + '\\' + file.name)
-                        # копируем обложку
-                        #  обложка большая! копируется медленно!
-                        print('Cover has copied!')
-                    except Exception as e:
-                        print('Export to PDF failed: ' + str(e))
 
     def copy_cover_files(self, source_dir: str, target_dir: str) -> None:
         """
