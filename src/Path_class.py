@@ -30,10 +30,19 @@ class Path:
 
         path_cover_1_good_txt = doc._path_cover_1_good_txt
 
-    def __int__(self, current_year: str, current_number: str):
-        self._current_year = current_year
-        self._current_number = current_number
-        self._get_paths()
+    def get_number(self, number: str) -> str:
+        """
+        проверяет, если 1-9 включительно
+        добавляет в начале 0"""
+        if len(number) == 1:
+            return '0' + number
+        return number
+
+    def __init__(self, number: str, year: str):
+        self._raw_number = number
+        self._year = year
+
+        self._number = self.get_number(self._raw_number)
 
 
 path = Path('2024', '08')

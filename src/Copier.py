@@ -1,50 +1,18 @@
 import os
 import shutil
-from doc import doc
-
-
-class Path:
-    def get_number(self, number: str) -> str:
-        """
-        проверяет, если 1-9 включительно
-        добавляет в начале 0"""
-        if len(number) == 1:
-            return '0' + number
-        return number
-
-    def __init__(self, number: str, year: str):
-        self._raw_number = number
-        self._year = year
-
-        self._number = self.get_number(self._raw_number)
-
-    def get_path(self):
-        # source
-
-        # indd file
-        publication_filename = self._number + doc.tail_of_filename_publication
-        indd_source = doc.dir_source_indd + + self._year + '\\' + self._number + '\\' + publication_filename
-
-        indd_target = ''
-
-        cover_dir_source = ''
-        cover_dir_target = ''
-
-        photos_dir_source = ''
-
-        # target
 
 
 class Copier:
-    def __int__(self, filefrom: str, fileto: str, imgdirfrom: str, imgdirto: str) -> None:
+    def __int__(self) -> None:
         # indd file
-        self._filefrom = filefrom
-        self._fileto = fileto
+        # self._filefrom = filefrom
+        # self._fileto = fileto
+        #
+        # # img dir
+        # self._imgdirfrom = imgdirfrom
+        # self._imgdirto = imgdirto
 
-        # img dir
-        self._imgdirfrom = imgdirfrom
-        self._imgdirto = imgdirto
-
+    # Files.
     def copy_indd_file(self):
         """
         Copy the file.
@@ -55,8 +23,11 @@ class Copier:
         except:
             print('err')
 
+    def copy_cover_title(self):
+        pass
 
-    def copy_cover_files(self, source_dir: str, target_dir: str) -> None:
+    # Directory.
+    def copy_color_dir(self, source_dir: str, target_dir: str) -> None:
         """
         Copy cover files from the source directory to the target directory.
 
@@ -83,3 +54,6 @@ class Copier:
                     print(f"Cover file '{file_name}' has been copied successfully.")
                 except Exception as e:
                     print(f"Error copying cover file '{file_name}': {str(e)}")
+
+    def copy_imgs(self):
+        pass
