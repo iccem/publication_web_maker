@@ -4,6 +4,7 @@ import shutil
 
 class Copier:
     def __int__(self) -> None:
+        pass
         # indd file
         # self._filefrom = filefrom
         # self._fileto = fileto
