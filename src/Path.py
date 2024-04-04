@@ -2,21 +2,22 @@ from doc import doc
 
 
 class Path:
-    """
-    Дано
-        публикация indd Чб - путь к файлу
-        обложка цветная pdf - путь к папке с файлами pdf
-        папка с цветными фото - путь к папке с файлами (jpg, png, etc.)
+    # _remote
 
-    Получить
-        1) preview-публикация (indd-публикация Чб + "легкая" цветная обложка)
-        требуется: чб-публикация, обложка
-    """
+    indd_remote = ''
+    cover_title_remote = ''
 
-    #  Source.
-    bw_indd_file_path = ''
-    cover_hq_files_directory_path = ''
-    photos_directory_path = ''
+    color_adv__remote = ''
+    img__remote = ''
+
+    # _local
+    indd_local = ''
+    cover_title_local = ''
+
+    color_adv__local = ''
+    img__local = ''
+
+    links_local = ''
 
     def _get_paths(self):
         """Get paths sources and targets."""
