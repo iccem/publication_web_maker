@@ -2,7 +2,7 @@ import win32com.client
 import os
 
 class ConverterINDD2PDF:
-    """Opens indd-file and creates PDF-preview (block)."""
+    """Open indd-file and create PDF-preview (block)."""
     def __int__(self, folder: str):
         self._folder = folder
 
