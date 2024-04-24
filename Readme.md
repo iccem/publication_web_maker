@@ -15,3 +15,4 @@
 Дополнительные библиотеки
 pip install pywin32
 pip install pdf2image
+pip install PyPDF2
