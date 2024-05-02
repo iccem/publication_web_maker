@@ -46,6 +46,6 @@ class Path:
         self._number = self.get_number(self._raw_number)
 
 
-path = Path('2024', '08')
+# path = Path('2024', '08')
 
 

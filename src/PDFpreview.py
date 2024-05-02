@@ -5,6 +5,8 @@ class PDFpreview:
     def create_pdf_preview(self):
         pass
 
+    # poppler_path = doc._POPPLER_PATH
+
     # if not exist copy:
     # local-indd, local-title-cover, local-color-adv
     # Copier.py
