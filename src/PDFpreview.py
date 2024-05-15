@@ -1,3 +1,9 @@
+import Path
+import Copier
+import Converter_indd2PDF
+import Сonverter_pdf2jpeg
+
+
 class PDFpreview:
     def __int__(self):
         pass
