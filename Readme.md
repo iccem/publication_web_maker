@@ -18,4 +18,5 @@ pip install pywin32
 pip install pdf2image
 pip install PyPDF2
 pip install python-poppler
+pip install smtplib
 
